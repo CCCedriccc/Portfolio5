@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome to Student Portfolio!</h2>
+    <p>This is a compilation of all my projects in my learning journey. Feel free to explore!</p>
+
+
+<!-- Image directly below the text -->
+ <div>
+    <img
+      src="{{ url_for('static', filename='images/foldergrphfixed.png') }}"
+ </div>
+
+    
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+<div class="profile-avatar">
+  <img src="{{ url_for('static', filename='images/bldragon.jpg') }}" alt="Profile Picture" class="avatar-image">
+</div>
+
+<h2>Hello, {{ current_user.username }}!</h2>
+<p><a href="{{ url_for('public_portfolio', username=current_user.username)
+}}" target="_blank" class="btn-portfolio">View My Public Portfolio</a></p>
+
+<br></br>
+
+<h3 class="section-title">Your Projects:</h3>
+<ul>
+{% for p in projects %}
+<li>{{ p.title }} - <a class="btn-action" href="{{ url_for('edit_project', id=p.id)
+}}">Edit</a></li>
+{% else %}
+<li>No projects yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}
